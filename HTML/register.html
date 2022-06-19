@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="/CSS/register.css">
+</head>
+<body>
+    
+    <div class="center form-floating col-3 mt-5">
+        <input type="text" class="form-control" id="firstName" placeholder="First Name">
+        <label for="firstName">First Name</label>
+    </div>
+
+    <div class="center form-floating col-3 mt-5">
+        <input type="text" class="form-control" id="lastName" placeholder="First Name">
+        <label for="lastName">Last Name</label>
+    </div>
+
+    <div class="center form-floating col-3 mt-3">
+        <input type="text" class="form-control" id="country" placeholder="Insert Country">
+        <label for="country">Country</label>
+    </div>
+    
+    
+    <div class="center form-floating col-3 mt-3">
+        <input type="text" class="form-control" id="username" placeholder="Insert Username">
+        <label for="username">Username</label>
+    </div>
+    
+    
+    
+    <div class="center form-floating col-3 mt-3">
+        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        <label for="email">Email address</label>
+    </div>
+    <div class="center form-floating col-3  mt-3">
+        <input type="password" class="form-control" id="password" placeholder="Password">
+        <label for="password">Password</label>
+    </div>
+
+    <div class="center form-floating col-3  mt-3">
+        <input type="password" class="form-control" id="confirmPassword" placeholder="Password">
+        <label for="confirmPassowrd">Confirm Password</label>
+    </div>
+
+    
+    <div class="center col-3 mt-5" >
+        <button type="button" id="register" class="btn btn-primary">Register</button>
+        <button  type="button" id="login" class="btn btn-dark">Login</button>
+    </div> 
+
+
+
+
+    <script src="/JS/init.js"></script>
+    <script type="module" src="/JS/Views/registerView.js"></script>
+    <script type="module" src="/JS/Model/userModel.js"></script>
+</body>
+</html>

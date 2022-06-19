@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/CSS/admin.css">
+</head>
+<body>
+    
+    <div>
+        <h1>HI ADMIN</h1>
+        <button id="users" type="button" class="btn btn-info me-2">Users</button>
+        <button id="tutorials" type="button" class="btn btn-info me-2">Tutorials</button>
+        <button id="categories" type="button" class="btn btn-info me-2">Categories</button>
+        <button id="plants" type="button" class="btn btn-info me-2">Plants</button>
+    </div>
+
+    
+    <div id="change">
+
+    </div>
+    
+
+    <!-- MODALS -->
+    <div class="modal fade" id="addTutorial" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Add Tutorial</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="tutorialName" placeholder="Tutorial Name">
+                    <label for="tutorialName">Tutorial Name</label>
+                </div>
+                
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="tutorialCategory" placeholder="Tutorial Category">
+                    </select>    
+                        
+                    <label for="tutorialCategory">Tutorial Category</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="videoLink" placeholder="Video Link">
+                    <label for="videoLink">Video Link</label>
+                </div>
+               
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="difficulty" placeholder="Difficulty">
+                    <label for ="difficulty">Difficulty</label>
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description</label>
+                  <textarea class="form-control" id="description" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="flowerSubmit" class="form-label">Import Reward (Flower)</label>
+                  <input class="form-control" type="file" id="flowerSubmit">
+                </div>
+
+                                
+                <select class="form-select mb-3" id="exercise1" aria-label="Default select example">
+                  <option selected>Execise type</option>
+                  <option value="multipleChoice">Multiple Choice</option>
+                  <option value="complete">Complete the Text</option>
+                  <option value="ligar">Connect</option>
+                </select>
+                <select class="form-select mb-3" id="exercise2" aria-label="Default select example">
+                  <option selected>Execise type</option>
+                  <option value="multipleChoice">Multiple Choice</option>
+                  <option value="complete">Complete the Text</option>
+                  <option value="ligar">Connect</option>
+                </select>
+                <select class="form-select" id="exercise3" aria-label="Default select example">
+                  <option selected>Execise type</option>
+                  <option value="multipleChoice">Multiple Choice</option>
+                  <option value="complete">Complete the Text</option>
+                  <option value="ligar">Connect</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="createTutorial" type="button" class="btn btn-primary">Create Tutorial</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="addCategory" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Add Category</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="insertCategory" placeholder="Insert Category">
+                <label for="insertCategory">Insert Category</label>
+              </div> 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="submitCategory" type="button" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="addPlant" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Add Plant</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="addName" placeholder="Plant Name">
+                <label for="addName">Plant Name</label>
+              </div>
+              
+              <div class="form-floating mb-3">
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="plantCategory" placeholder="Plant Category">
+                  </select>    
+                      
+                  <label for="plantCategory">Plant Category</label>
+              </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="addDifficulty" placeholder="Plant Difficulty">
+                <label for="addDifficulty">Plant Difficulty</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="addDescription" placeholder="Plant Description">
+                <label for="addDescription">Plant Description</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="addImage" placeholder="Plant Image">
+                <label for="addImage">Plant Image</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" id="createPlant" class="btn btn-primary">Add Plant</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <script src="/JS/init.js"></script>
+    <script type="module" src="/JS/Views/adminView.js"></script>
+</body>
+</html>

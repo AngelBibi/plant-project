@@ -1,0 +1,254 @@
+@font-face{
+    font-family: Poppins;
+    src:url(../Fonts/Poppins-Black.ttf)
+}
+
+
+@media(max-width:820px){
+    body{
+        
+        background-color: #C8D9AD!important;
+    } 
+}
+
+video#bgvideo {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+}
+
+
+/* SEARCH */
+.search-box{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    box-sizing: border-box;
+
+}
+.input-search{
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: #C8D9AD;
+    padding-right: 40px;
+    color:#000;
+    box-sizing: border-box;
+
+}
+.input-search::placeholder{
+    color:#000;
+    font-size: 18px;
+    letter-spacing: 2px;
+    box-sizing: border-box;
+
+}
+.btn-search{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    color:#000 ;
+    background-color:transparent;
+    pointer-events: painted;  
+    box-sizing: border-box;
+
+}
+.btn-search:focus ~ .input-search{ /* ALL 2 ELEMEMT THAT IS PRECEDED BY 1 */
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid rgba(255,255,255,.5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+    box-sizing: border-box;
+
+}
+.input-search:focus{
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom:1px solid #000;
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+    box-sizing: border-box;
+
+}
+
+/* SEARCH END */
+
+
+.responsive{
+    max-width: 100%;
+    height:auto;
+}
+
+.nbar .container-fluid{
+    background-color: #C8D9AD;
+}
+
+
+.navIcons{
+    margin:10px;
+}
+
+
+#videoCover{
+height:100vh;
+width: 100%;
+position: fixed;
+}
+
+
+
+/* BACKGROUND COLORS */
+.buttons,#fds, #homeMenu{
+    background-color: #FFCFCA
+}
+
+.green{
+    background-color: #C8D9AD;
+}
+
+
+.yellow{
+    background-color:#FFE6B3;
+}
+
+.pink{
+    background-color:#F2B6B6
+}
+
+.backpurple{
+    background-color:#967BB6;
+    line-height: 1.2;
+}
+
+/* BACKGROUND COLORS END */
+
+
+/* TEXT COLOR */
+
+.purple{
+    color:#967BB6;
+}
+.white{
+    color:#FFFFFF;
+}
+
+
+
+/* TEXT COLOR END */
+.menu{
+   display:flex;
+   justify-content: center
+}
+
+#img2ndcol{
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+}
+
+.menu1{
+    font-size: 30px;
+    display:flex;
+    flex-wrap: nowrap;
+    width: 50vw;
+}
+.menu2{
+    font-size: 30px;
+    display:flex;
+    flex-wrap: nowrap;
+    width: 50vw;
+    justify-content:center;
+}
+
+.menu3{
+    font-size: 30px;
+    display:flex;
+    flex-wrap: nowrap;
+    width: 50vw;
+    justify-content:flex-end;
+}
+
+.bigger{
+    font-size:100px;
+}
+
+.new{
+    display:flex;
+    justify-content:center;
+    color:#F2B6B6;
+}
+
+.questions{
+    display:flex;
+    justify-content:center;
+    font-size:45px;
+}
+
+#overview{
+    display: flex;
+    align-items:center;
+}
+
+.poppins{
+    font-family:Poppins
+}
+.description{
+    font-size:20px;
+}
+
+.description2{
+    font-size:30px;
+}
+
+.big{
+    font-size:60px;
+    line-height:100%;
+}
+
+.midText{
+    font-size: 20px;
+}
+
+.textCard{
+    bottom:0;
+}
+
+.medium{
+    font-size:40px;
+}
+
+#title, #title2{
+    display:flex;
+    flex-wrap: nowrap;
+    width: 50vh;
+    align-items:baseline;
+
+}
+    
+.card {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title-card {
+    margin-bottom: 200px;
+    padding: 20px;
+}
+
+.textCard {
+    padding: 45px
+}
