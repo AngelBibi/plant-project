@@ -45,11 +45,27 @@
                         
                     <label for="tutorialCategory">Tutorial Category</label>
                 </div>
+                
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="levelId" placeholder="Level Id (1-3)">
+                  <label for="levelId">Level Id (1-3)</label>
+                </div>
+                
+                
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="videoLink" placeholder="Video Link">
                     <label for="videoLink">Video Link</label>
                 </div>
                
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="qtTimeStamps" placeholder="How many TimeStamps?">
+                  <label for="qtTimeStamps">How many TimeStamps?</label>
+                </div>
+
+                <div class="insertTimeStamps">
+                  
+                </div>
+
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="difficulty" placeholder="Difficulty">
                     <label for ="difficulty">Difficulty</label>
@@ -58,30 +74,14 @@
                   <label for="description" class="form-label">Description</label>
                   <textarea class="form-control" id="description" rows="3"></textarea>
                 </div>
+                
                 <div class="mb-3">
-                  <label for="flowerSubmit" class="form-label">Import Reward (Flower)</label>
-                  <input class="form-control" type="file" id="flowerSubmit">
+                  <label for="tutorialImage" class="form-label">Tutorial Image</label>
+                  <input class="form-control" type="file" id="tutorialImage">
                 </div>
 
                                 
-                <select class="form-select mb-3" id="exercise1" aria-label="Default select example">
-                  <option selected>Execise type</option>
-                  <option value="multipleChoice">Multiple Choice</option>
-                  <option value="complete">Complete the Text</option>
-                  <option value="ligar">Connect</option>
-                </select>
-                <select class="form-select mb-3" id="exercise2" aria-label="Default select example">
-                  <option selected>Execise type</option>
-                  <option value="multipleChoice">Multiple Choice</option>
-                  <option value="complete">Complete the Text</option>
-                  <option value="ligar">Connect</option>
-                </select>
-                <select class="form-select" id="exercise3" aria-label="Default select example">
-                  <option selected>Execise type</option>
-                  <option value="multipleChoice">Multiple Choice</option>
-                  <option value="complete">Complete the Text</option>
-                  <option value="ligar">Connect</option>
-                </select>
+                
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -156,6 +156,68 @@
           </div>
         </div>
       </div>
+
+
+
+      <div class="modal fade" id="addExercises" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Add Exercises</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <select class="form-select tutorialsChoose" aria-label="Default select example">
+              </select>
+              
+              <label class="mt-5">Multiple Choice</label>
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="question" placeholder="Question">
+                <label for="question">Question</label>
+              </div>
+              
+              
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="rightAnswer" placeholder="Right Answer">
+                <label for="rightAnswer">Right Answer</label>
+              </div> 
+              
+              
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="wrongAnswer1" placeholder="Right Answer 1">
+                <label for="wrongAnswer1">Wrong Answer 1</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="wrongAnswer2" placeholder="Right Answer 2">
+                <label for="wrongAnswer2">Wrong Answer 2</label>
+              </div> 
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="wrongAnswer3" placeholder="Right Answer 3">
+                <label for="wrongAnswer3">Wrong Answer 3</label>
+              </div>     
+
+              <label class="mt-5">True or False</label>
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="questionTF" placeholder="Question">
+                <label for="questionTF">Question</label>
+              </div>
+              
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="rightAnswerTF" placeholder="Right Answer">
+                <label for="rightAnswerTF">Right Answer</label>
+              </div>
+              
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button id="createExercises" type="button" class="btn btn-primary">Add Exercises</button>
+            </div>
+          </div>
+        </div>
+    </div>
 
 
 

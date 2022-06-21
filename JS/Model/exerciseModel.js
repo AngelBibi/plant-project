@@ -1,32 +1,47 @@
-let exs;
 
-//ir buscar a info do ex
-export function init(){
-    exercises = localStorage.exercise ? JSON.parse(localStorage.exercise) : []
+
+export function addExercise(question,rightAnswer,wrongAnswer1,wrongAnswer2,wrongAnswer3,questionTF,rightAnswerTF) {
+    let exercises=JSON.parse(localStorage.exercises);
+    
+    let id=0
+    let lessonId=0
+    
+    
+
+
+    id=exercises[exercises.length-1].id + 1
+    lessonId=document.querySelector(".tutorialsChoose").value
+    
+    exercises.push(new Exercise(id,lessonId,question,rightAnswer,wrongAnswer1,wrongAnswer2,wrongAnswer3,questionTF,rightAnswerTF))
+    localStorage.setItem("exercises", JSON.stringify(exercises))
+    
 }
 
-export default class Exercise{
-    ID = 0
-    question = ""
-    answers = []
-    correctAns = ""
-    positions = []
-    xp = 0
-    type=0
-    lessonID=0
 
-    constructor(ID,question,answers,type,correctAns,lessonID){
-        this.ID = ID
-        this.question = question
-        this.answers = answers
-        this.type=type
-        this.correctAns = correctAns
-        this.lessonID = lessonID
-        
+export default class Exercise{
+    id = 0
+    lessonId=0
+    question = ""
+    questionTF=""
+    rightAnswer
+    rightAnswerTF
+    wrongAnswer1
+    wrongAnswer2
+    wrongAnswer3
+    
+
+
+    constructor(id,lessonId,question,questionTF,rightAnswer,rightAnswerTF,wrongAnswer1,wrongAnswer2,wrongAnswer3) {
+        this.id=id
+        this.lessonId= lessonId
+        this.question=question
+        this.questionTF=questionTF
+        this.rightAnswer=rightAnswer
+        this.rightAnswerTF=rightAnswerTF
+        this.wrongAnswer1=wrongAnswer1
+        this.wrongAnswer2=wrongAnswer2
+        this.wrongAnswer3=wrongAnswer3
         
     }
 }
 
-let a = Exercise(1,2,[3,3,3,3],1,4)
-
-a.positions = 10

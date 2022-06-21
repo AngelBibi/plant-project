@@ -29,9 +29,12 @@ export function userAdd(username,password, email, firstName,lastName, country,co
 
 
 export function userLogin(username,password){
-    console.log("yau")
+    
     let search= users.find(user => user.username == username && user.password == password);
-    console.log(search);
+    
+
+    localStorage.setItem("currentUser", JSON.stringify(search))
+    
     if (search.block){
         alert("Vc está bloqueado")
         return

@@ -68,56 +68,84 @@ function initdata(){
         }
 
 
-     /*    if (!localStorage.exercises) {
+        if (!localStorage.exercises) {
             let exercises = [
                 {
-                    ID:1,
-                    question:`What type of plant is this?`,
-                    answers:["plant1","plant2","plant3","plant4"],
-                    type:1,
-                    correctAns:0,
-                    lesosonID:1
+                    id:1,
+                    lessonId:1,
+                    question:"What type of plant is this?",
+                    questionTF:"Are roses a plant?",
+                    rightAnswer:"Rose",
+                    rightAnswerTF:"True",
+                    wrongAnswer1:"xxx",
+                    wrongAnswer2:"yyy",
+                    wrongAnswer3:"zzz",
                 },
-                
                 {
-                    ID:2,
-                    question:`What type of plant is this? 2`,
-                    answers:["plant1","plant2","plant3","plant4"],
-                    type:1,
-                    correctAns:0,
-                    lessonID:1
+                    id:2,
+                    lessonId:2,
+                    question:"What type of plant is this?",
+                    questionTF:"Are orchids a plant?",
+                    rightAnswer:"Orchid",
+                    rightAnswerTF:"True",
+                    wrongAnswer1:"xxx",
+                    wrongAnswer2:"yyy",
+                    wrongAnswer3:"zzz",
                     
-                },
+                }
             ];
-            exercises[0].correctAns=exercises[0].answers[0]
-            exercises[1].correctAns=exercises[1].answers[1]
+           
             localStorage.setItem("exercises", JSON.stringify(exercises))
-            } */
+        }
+        
+        if(!localStorage.levels){
+            let levels = [
+                {
+                    id:1,
+                    name:"Easy",
+                },
+                {
+                    id:2,
+                    name:"Medium",
+                },
+
+                {
+                    id:3,
+                    name:"Hard",
+                }
+
+            ];
+            localStorage.setItem("levels", JSON.stringify(levels))
+        }
+
+
 
         if(!localStorage.tutorials){
             let tutorials= [
                 {
                     name:"Rose",
                     id:1,
+                    levelId:1,
+                    tutorialImage:"../MEDIA/IMG/orchid.jpg",
                     category:"Azul",
-                    videolink:"/MEDIA/VIDEOS/timHenson.mp4",
+                    videolink:"../MEDIA/VIDEOS/timHenson.mp4",
                     difficulty:"Easy",
                     description:"sssssssssssss",
-                    reward:false,
                     likes:0,
-                    exercises:[]
+                    
                 },
 
                 {
                     name:"Tree",
                     id:2,
+                    levelId:3,
+                    tutorialImage:"../MEDIA/IMG/orchid.jpg",
                     category:"Vermelho",
-                    videolink:"/MEDIA/VIDEOS/timHenson.mp4",
+                    videolink:"../MEDIA/VIDEOS/timHenson.mp4",
                     difficulty:"Hard",
-                    description:"SSSSS",
-                    reward:false,
+                    description:"SSSSSS SSSSSSSSSS SSSSSSSSSS SSSSSSSSSSSS SSSSSSSSSS SSSSSSSSSSSS SSSSSSSSSSSSSSSS SSSSSSSSSS SSSSSSS SSSSSSSSSSS SSSSSSSSSSSS SSSSSSSSSSS SSSSSSSS",
                     likes:10,
-                    exercises:[]
+                
                 }
             ];
             localStorage.setItem("tutorials",JSON.stringify(tutorials))
@@ -135,7 +163,7 @@ function initdata(){
                 }
             ];
             localStorage.setItem("categories", JSON.stringify(categories))
-        }
+      }
 
 
         if(!localStorage.plants){
@@ -165,4 +193,18 @@ function initdata(){
             let blocked= [];
             localStorage.setItem("blocked", JSON.stringify(blocked))
         }
+
+
+        if(!localStorage.currentUser){
+            let currentUser={
+                username:"Pais",
+                password:"yau",
+                email: "pais2@gmail.com",
+                firstName: "João",
+                lastName:"QQQ",
+                image:"",
+            
+            }
+            localStorage.setItem("currentUser", JSON.stringify(currentUser))
+        } 
 }

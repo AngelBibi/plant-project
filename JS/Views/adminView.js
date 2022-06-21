@@ -1,11 +1,13 @@
 import * as Plant from "../Model/plantModel.js";
 import * as Tutorial from "../Model/tutorialModel.js";
+import * as Exercise from "../Model/exerciseModel.js"
 
 let users = JSON.parse(localStorage.users);
 let tutorials = JSON.parse(localStorage.tutorials);
 let categories = JSON.parse(localStorage.categories);
 let plants = JSON.parse(localStorage.plants);
 let blocked= JSON.parse(localStorage.blocked)
+let exercises= JSON.parse(localStorage.exercises);
 
 
 
@@ -69,12 +71,13 @@ document.getElementById("users").addEventListener("click", () =>{
 /* EVENT LISTENER PARA O BOTAO DE TUTORIALS */
 document.getElementById("tutorials").addEventListener("click", () => {
     tutorials = JSON.parse(localStorage.tutorials);
-    categories = JSON.parse(localStorage.categories)
-       
+    categories = JSON.parse(localStorage.categories);
+    let exercises= JSON.parse(localStorage.exercises);
+    let timeStamps=[];   
 
     document.getElementById(
         `change`
-    ).innerHTML = `<button type="button" class="btn btn-success mt-5" data-bs-toggle="modal" data-bs-target="#addTutorial">Add Tutorial</button>
+    ).innerHTML = `<button type="button" class="btn btn-success mt-5" data-bs-toggle="modal" data-bs-target="#addTutorial">Add Tutorial</button><button type="button" class="btn btn-success mt-5" data-bs-toggle="modal" data-bs-target="#addExercises">Add Exercises</button>
                         <div class="table-responsive-md">
                             <table id="tableChange" class="table table-striped mt-3">
                                 
@@ -90,22 +93,47 @@ document.getElementById("tutorials").addEventListener("click", () => {
           <option value="${categories[i].name}">${categories[i].name}</option>`; 
     }
     
+    document.querySelector(".tutorialsChoose").innerHTML=``;
+    for (let i =0; i<tutorials.length; i++){
+        document.querySelector(".tutorialsChoose").innerHTML += `
+        <option value="${tutorials[i].id}">${tutorials[i].name}</option>`
+    } 
+
+    let qtyTimestapms=document.getElementById("qtTimeStamps").value
+    for(let i =0;i<qtyTimestapms;i++){
+
+        document.querySelector(".insertTimeStamps").innerHTML +=`
+        <div class="form-floating mb-3">
+        <input type="text" class="form-control TimeStamps" placeholder="Timestamp">
+        
+        </div>
+        
+        `
+        
+    
+
+    }
+
+   
+
+
+
     document.getElementById("tableChange").innerHTML = ``;
     document.getElementById(
         "tableChange"
     ).innerHTML = `<thead class="table-dark">
-                        <tr><th>Name</th><th>ID</th><th>Categories</th>
+                        <tr><th>Name</th>
+                            <th>ID</th>
+                            <th>Categories</th>
                             <th>Video</th>
                             <th>Dificulty</th>
                             <th>Description</th>
-                            <th>Rewards</th>
-                            <th>Likes</th>
-                            <th>Exercises</th>
                             <th>Actions</th>
 
                         </tr>
                     </thead>`;
     console.log(tutorials.length);
+    
     for (let i = 0; i < tutorials.length; i++) {
         document.getElementById(
         `tableChange`
@@ -115,9 +143,9 @@ document.getElementById("tutorials").addEventListener("click", () => {
                                             <td>${tutorials[i].videolink}</td>
                                             <td>${tutorials[i].difficulty}</td>
                                             <td>${tutorials[i].description}</td>
-                                            <td>${tutorials[i].reward}</td>
-                                            <td>${tutorials[i].likes}</td>
-                                            <td>${tutorials[i].exercises}</td>
+                                            
+                                            
+                                            
                                             <td>
                                                 <div class="changeIcon">
                                                     
@@ -284,33 +312,51 @@ document.getElementById("plants").addEventListener("click",() =>{
 document.getElementById("createTutorial").addEventListener("click", () => {
     let name = document.getElementById("tutorialName").value;
     let id
+    let levelId= document.getElementById("levelId").value
     let category = document.getElementById("tutorialCategory").value;
     let videoLink = document.getElementById("videoLink").value;
     let difficulty = document.getElementById("difficulty").value;
     let description = document.getElementById("description").value;
-    let flower = document.getElementById("flowerSubmit").value;
-    let ex1 = document.getElementById("exercise1").value;
-    let ex2 = document.getElementById("exercise2").value;
-    let ex3 = document.getElementById("exercise3").value;
-    
+    let tutorialImage= document.getElementById("tutorialImage").value
+    console.log(videoLink)
     /* try{ */
     Tutorial.addTutorial(
       name,
-      id,
       category,
+      levelId,
       videoLink,
       difficulty,
       description,
-      flower,
-      ex1,
-      ex2,
-      ex3
+      tutorialImage
     );
     /* } /* catch(error){
     alert(error.message)
   } */
     refreshTutorials();
 });
+
+document.getElementById("createExercises").addEventListener("click", () =>{
+    let question = document.getElementById("question").value
+    let rightAnswer = document.getElementById("rightAnswer").value
+    let wrongAnswer1= document.getElementById("wrongAnswer1").value
+    let wrongAnswer2= document.getElementById("wrongAnswer2").value
+    let wrongAnswer3= document.getElementById("wrongAnswer3").value
+    let questionTF= document.getElementById("questionTF").value
+    let rightAnswerTF=document.getElementById("rightAnswerTF").value
+
+    Exercise.addExercise(
+        question,
+        rightAnswer,
+        wrongAnswer1,
+        wrongAnswer2,
+        wrongAnswer3,
+        questionTF,
+        rightAnswerTF
+
+    )
+})
+
+
 
 document.getElementById("submitCategory").addEventListener("click", () => {
     
@@ -482,7 +528,7 @@ function refreshTutorials(){
 
     document.getElementById(
         `change`
-    ).innerHTML = `<button type="button" class="btn btn-success mt-5" data-bs-toggle="modal" data-bs-target="#addTutorial">Add Tutorial</button>
+    ).innerHTML = `<button type="button" class="btn btn-success mt-5" data-bs-toggle="modal" data-bs-target="#addTutorial">Add Tutorial</button><button type="button" class="btn btn-success mt-5" data-bs-toggle="modal" data-bs-target="#addExercises">Add Exercises</button>
                         <div class="table-responsive-md">
                             <table id="tableChange" class="table table-striped mt-3">
                                 
@@ -498,9 +544,6 @@ function refreshTutorials(){
                                                 <th>Video</th>
                                                 <th>Dificulty</th>
                                                 <th>Description</th>
-                                                <th>Rewards</th>
-                                                <th>Likes</th>
-                                                <th>Exercises</th>
                                                 <th>Actions</th>
                     
                                             </tr>
@@ -514,9 +557,7 @@ function refreshTutorials(){
                                             <td>${tutorials[i].videolink}</td>
                                             <td>${tutorials[i].difficulty}</td>
                                             <td>${tutorials[i].description}</td>
-                                            <td>${tutorials[i].reward}</td>
-                                            <td>${tutorials[i].likes}</td>
-                                            <td>${tutorials[i].exercises}</td>
+                                            
                                             <td>
                                                 <div class="changeIcon">
                                                     
