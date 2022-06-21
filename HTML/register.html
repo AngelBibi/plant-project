@@ -10,51 +10,82 @@
     <link type="text/css" rel="stylesheet" href="/CSS/register.css">
 </head>
 <body>
-    
-    <div class="center form-floating col-3 mt-5">
-        <input type="text" class="form-control" id="firstName" placeholder="First Name">
-        <label for="firstName">First Name</label>
-    </div>
+    <section class="vh-100" style="background-color: #FFCFCA;">
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+              <div class="card" style="border-radius: 1rem;">
+                <div class="row g-0">
+                  <div class="col-md-6 col-lg-5 d-none d-md-block">
+                    <img src="../MEDIA/IMG/register.png" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" width="1000px"/>
+                  </div>
+                  <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                    <div class="card-body p-4 p-lg-5 text-black">
+      
+                      <form>
+                        <br>
+                        <div class="d-flex align-items-center mb-3 pb-1">
+                            <img src="../MEDIA/IMG/LOGO/3.png" class="img-fluid" width="70px">
+                            <span class="h1 fw-bold mb-0">loomify</span>
+                        </div>
+                        <br>
+                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Register here</h5>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="form-outline">
+                                    <input type="text" id="firstName" class="form-control" />
+                                    <label for="firstName">First name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                              <div class="form-outline">
+                                <input type="text" id="lastName" class="form-control" />
+                                <label for="lastName">Last name</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-outline mb-4">
+                            <input type="text" id="username" class="form-control" />
+                            <label for="username">Username</label>
+                        </div>
 
-    <div class="center form-floating col-3 mt-5">
-        <input type="text" class="form-control" id="lastName" placeholder="First Name">
-        <label for="lastName">Last Name</label>
-    </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" id="country" class="form-control" />
+                            <label for="country">Country</label>
+                        </div>
 
-    <div class="center form-floating col-3 mt-3">
-        <input type="text" class="form-control" id="country" placeholder="Insert Country">
-        <label for="country">Country</label>
-    </div>
-    
-    
-    <div class="center form-floating col-3 mt-3">
-        <input type="text" class="form-control" id="username" placeholder="Insert Username">
-        <label for="username">Username</label>
-    </div>
-    
-    
-    
-    <div class="center form-floating col-3 mt-3">
-        <input type="email" class="form-control" id="email" placeholder="name@example.com">
-        <label for="email">Email address</label>
-    </div>
-    <div class="center form-floating col-3  mt-3">
-        <input type="password" class="form-control" id="password" placeholder="Password">
-        <label for="password">Password</label>
-    </div>
+                        <div class="form-outline mb-4">
+                          <input type="email" id="email" class="form-control" />
+                          <label for="email">Email address</label>
+                        </div>
+      
+                        <div class="form-outline mb-4">
+                          <input type="password" id="password" class="form-control" />
+                          <label for="password">Password</label>
+                        </div>
 
-    <div class="center form-floating col-3  mt-3">
-        <input type="password" class="form-control" id="confirmPassword" placeholder="Password">
-        <label for="confirmPassowrd">Confirm Password</label>
-    </div>
-
-    
-    <div class="center col-3 mt-5" >
-        <button type="button" id="register" class="btn btn-primary">Register</button>
-        <button  type="button" id="login" class="btn btn-dark">Login</button>
-    </div> 
-
-
+                        <div class="form-outline mb-4">
+                            <input type="password" id="confirmPassword" class="form-control" />
+                            <label for="confirmPassword">Confirm password</label>
+                        </div>
+      
+                        <div class="pt-1 mb-4">
+                          <button type="button" id="register" class="btn btn-dark btn-lg btn-block" >Register</button>
+                        </div>
+      
+                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account? <a href="login.html"
+                            style="color: #393f81;">Login here</a></p>
+                      </form>
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
 
 
     <script src="/JS/init.js"></script>
