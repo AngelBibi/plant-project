@@ -42,7 +42,7 @@ if (check == undefined) {
             </div>
             <div>
             <a class="navIcons" href="login.html">
-            <img src="/MEDIA/IMG/user.svg" alt="User Icon">
+            <img class="pic" src="../MEDIA/IMG/user.svg" alt="User Icon">
             </a>
             </div>
             
@@ -69,9 +69,7 @@ if (check == undefined) {
             <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">Tutorials</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Garden</a>
-            </li>
+            
             <li class="nav-item">
             <a class="nav-link" href="#">Reminder</a>
             </li>
@@ -83,7 +81,7 @@ if (check == undefined) {
             </div>
             <div>
             <a class="navIcons" href="">
-            <img src="${check.image}" alt="User Icon">
+            <img class="pic" src="${check.image}" alt="User Icon">
             </a>
             </div>
             
@@ -100,9 +98,9 @@ console.log(n)
 
 console.log(document.querySelector("#ah").innerHTML)
 if (n==0){
-    document.querySelector(".navbar-brand").innerHTML=`<img class="logo" width="200" src="../MEDIA/IMG/LOGO/bloomify.png">`
+    document.querySelector(".navbar-brand").innerHTML=`<img class="logo" width="30" src="../MEDIA/IMG/LOGO/4.png">`
 }else if(n ==1){
     document.querySelector(".navbar-brand").innerHTML=`<img class="logo" width="30" src="../MEDIA/IMG/LOGO/2.png">`
-}else if(n==2){
+}else{
     document.querySelector(".navbar-brand").innerHTML=`<img class="logo" width="30" src="../MEDIA/IMG/LOGO/3.png">`
-}else document.querySelector(".navbar-brand").innerHTML=`<img class="logo" width="30" src="../MEDIA/IMG/LOGO/4.png">`
+}

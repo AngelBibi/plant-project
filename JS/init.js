@@ -10,11 +10,12 @@ function initdata(){
                 email:`joao@gmail.com`,
                 firstName:`João`,
                 lastName:`Pais`,
-                image:`https://mundoconectado.com.br/uploads/chamadas/rickastley.jpg`,
+                image:`../MEDIA/IMG/pfp.jpg`,
                 country:`Portugal`,
                 type:`user`,
-                points:0,
+                points:1000,
                 block:false,
+                description:"YAU"
 
                 
             },
@@ -29,6 +30,7 @@ function initdata(){
                 type:`user`,
                 points:0,
                 block: true,
+                description:""
             }
         ];
         localStorage.setItem('users', JSON.stringify(users));
@@ -84,13 +86,13 @@ function initdata(){
                 {
                     id:2,
                     lessonId:2,
-                    question:"What type of plant is this?",
+                    question:"",
                     questionTF:"Are orchids a plant?",
-                    rightAnswer:"Orchid",
+                    rightAnswer:"",
                     rightAnswerTF:"True",
-                    wrongAnswer1:"xxx",
-                    wrongAnswer2:"yyy",
-                    wrongAnswer3:"zzz",
+                    wrongAnswer1:"",
+                    wrongAnswer2:"",
+                    wrongAnswer3:"",
                     
                 }
             ];

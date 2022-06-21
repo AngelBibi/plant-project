@@ -27,7 +27,7 @@ levels.forEach(level =>{
         document.querySelector(`#ttt${level.id}`).innerHTML += `<a href="tutorial.html" class="tutorial" id="${tutorial.id}"> I am tutorial ${tutorial.id}</a>`
         exercises.forEach(exercise =>{
           if(exercise.lessonId == tutorial.id){
-            document.querySelector(`#ttt${level.id}`).innerHTML += `<a href="#" class="exercise" id="${exercise.id}"> I am exercise ${exercise.id}</a>`
+            document.querySelector(`#ttt${level.id}`).innerHTML += `<a href="../HTML/exercise.html" class="exercise" id="${exercise.id}"> I am exercise ${exercise.id}</a>`
           }
         })
       }
