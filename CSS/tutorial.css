@@ -8,28 +8,70 @@
   src:url(../Fonts/WildBloom-BW.ttf)
 }
 
-
+.poppins{
+  font-family:Poppins;
+}
+.wild{
+  font-family:Wild;
+}
 .green{
     background-color: #C8D9AD;
 }
 
+.description{
+  font-size:40px;
+  text-decoration: underline;
+}
+.tutorial{
+  font-size:50px;
+  text-decoration: underline;
+}
 
-@media(max-width:580px){
-  #imageTutorial{
-    width:90%
+@media(max-width:400px){
+  
+
+  p#tutorialTitle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+    font-size:20px;
+    
+    top:50%;
+    left:50%;
+    color:#FFF;
+    text-shadow: 2px 2px 5px black;
+      
   }
-
   
 
+ 
 
   
 }
 
-.responsive{
-  max-width: 100%;
-  height:auto;
+@media(max-width:600px){
+  .description{
+    font-size:20px;
+    text-decoration: underline;
+  }
+  .tutorial{
+    font-size:30px
+  }
 }
 
+@media(max-width:600px){
+  #tutorialDescription{
+    font-family:Poppins;
+    font-size:12px;
+    text-align: justify;
+  }
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
 #imageTutorial{
   border-radius: 75px;
 
@@ -44,9 +86,10 @@
 
 #tutorialDescription{
   font-family:Poppins;
+  text-align: justify;
 }
 
-#tutorialTitle{
+p#tutorialTitle{
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -56,7 +99,7 @@
   top:50%;
   left:50%;
   color:#FFF;
-  text-shadow: 2px 2px 5px red;
+  text-shadow: 2px 2px 5px black;
     
 }
 

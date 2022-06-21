@@ -130,7 +130,7 @@ function initdata(){
                     category:"Azul",
                     videolink:"../MEDIA/VIDEOS/timHenson.mp4",
                     difficulty:"Easy",
-                    description:"sssssssssssss",
+                    description:"SSSSSS SSSSSSSSSS SSSSSSSSSS SSSSSSSSSSSS SSSSSSSSSS SSSSSSSSSSSS SSSSSSSSSSSSSSSS SSSSSSSSSS SSSSSSS SSSSSSSSSSS SSSSSSSSSSSS SSSSSSSSSSS SSSSSSSS",
                     likes:0,
                     
                 },

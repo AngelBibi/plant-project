@@ -3,6 +3,12 @@ let users= JSON.parse(localStorage.users)
 let check= users.find(user => user.username == currentUser.username)
 console.log(currentUser)
 console.log(check)
+
+
+
+
+
+
 if (check == undefined) {
     
     document.querySelector("#navv").innerHTML = `
@@ -11,7 +17,7 @@ if (check == undefined) {
     <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light container">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">LOGO</a>
+    <a class="navbar-brand" id="ah" href="#"><img class="logo" src=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
     aria-label="Toggle navigation">
@@ -20,7 +26,7 @@ if (check == undefined) {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Tutorials</a>
+            <a class="nav-link" aria-current="page" href="../HTML/tutorials.html">Tutorials</a>
             </li>
             <li class="nav-item">
             <a class="nav-link" href="#">Garden</a>
@@ -52,7 +58,7 @@ if (check == undefined) {
     <div class="container-fluid">
     <nav class="navbar navbar-expand-lg navbar-light container">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">LOGO</a>
+    <a class="navbar-brand" id="ah" href="#"><img class="logo" width="30" src=""></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
     aria-label="Toggle navigation">
@@ -88,3 +94,15 @@ if (check == undefined) {
     `
 
 }
+
+let n= Math.floor(Math.random()*4)
+console.log(n)
+
+console.log(document.querySelector("#ah").innerHTML)
+if (n==0){
+    document.querySelector(".navbar-brand").innerHTML=`<img class="logo" width="200" src="../MEDIA/IMG/LOGO/bloomify.png">`
+}else if(n ==1){
+    document.querySelector(".navbar-brand").innerHTML=`<img class="logo" width="30" src="../MEDIA/IMG/LOGO/2.png">`
+}else if(n==2){
+    document.querySelector(".navbar-brand").innerHTML=`<img class="logo" width="30" src="../MEDIA/IMG/LOGO/3.png">`
+}else document.querySelector(".navbar-brand").innerHTML=`<img class="logo" width="30" src="../MEDIA/IMG/LOGO/4.png">`
